@@ -6,8 +6,6 @@ import java.io.Serializable;
 
 /**
  * 自定义返回结果
- * <p>Title:BaseResult</p>
- * <P>Description: </P>
  */
 
 @Data
@@ -23,6 +21,10 @@ public class BaseResult implements  Serializable{
     private String message;
 
     private Object data;
+    public  BaseResult setData (Object data) {
+        this.data = data;
+        return  this;
+    }
 
     // 成功 200
     public static BaseResult success() {

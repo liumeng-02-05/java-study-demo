@@ -25,12 +25,11 @@ public class ResourceServiceConfig  extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
+        // 放行oauth2的请求
+        http.authorizeRequests()
+                .antMatchers("/mobile/homepage/json").permitAll();
 
         http.authorizeRequests()
-                .antMatchers("/home/**").permitAll();
-
-        http.authorizeRequests()
-                //.antMatchers("/admin/**").hasRole("admin")
                 .antMatchers("/type/**").hasAnyRole("admin","ADMIN")
                 .antMatchers("/type2/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
