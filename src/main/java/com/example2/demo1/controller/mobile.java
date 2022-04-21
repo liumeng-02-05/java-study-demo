@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/study-api/mobile")
+@RequestMapping("/mobile")
 public class mobile {
     @Autowired
     private  RedisTemplate redisTemplate;

@@ -28,7 +28,6 @@ public class ResourceServiceConfig  extends ResourceServerConfigurerAdapter {
         // 放行oauth2的请求
         http.authorizeRequests()
                 .antMatchers("/mobile/homepage/json").permitAll();
-
         http.authorizeRequests()
                 .antMatchers("/type/**").hasAnyRole("admin","ADMIN")
                 .antMatchers("/type2/**").hasRole("ADMIN")
